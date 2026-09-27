@@ -1019,6 +1019,10 @@ class Capabilities:
         Sherman-Morrison update of the OLS coefficients. Only ``feols()``
         fits without instruments support it; ``did2s()`` and
         ``event_study()`` fits do not.
+    weighting_bootstrap : bool
+        Whether ``bootstrap_bayesian()`` and ``bootstrap_pairs()`` can reweight
+        the fit. ``quantreg()``, ``did2s()``, and ``event_study()`` fits do not
+        support them.
 
     Examples
     --------
@@ -1043,6 +1047,7 @@ class Capabilities:
     fixed_effect_recovery: bool
     randomization_inference: bool
     sherman_morrison_update: bool
+    weighting_bootstrap: bool
 
 
 @dataclass(frozen=True, slots=True, kw_only=True)
